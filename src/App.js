@@ -1,28 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Music from './Music';
 
-class App extends Component {
-  render() {
+function App({membersData})  {
     return (
       <div className="App">
+      <Hello />
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-           Galbatron
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <img src={'images/members/trollet.png'} className="App-logo" alt="logo" />
+          
+            Members:
+          <Members {...membersData}/>
+          <Music />
         </header>
       </div>
     );
-  }
+}
+
+function Hello(props) {
+  return <h1 className="Site-header">Galbatron</h1>;
+}
+
+function Members({members}) {
+  console.log(members)
+  return(
+    <div className="container members">
+    <div className="row">
+    {members.map(member => (
+      <div className="col">
+      <img src={'images/members/trollet.png'} className="ProfilePic"/>
+      <p>{member.name}</p>
+      </div>
+    ))}
+    </div>
+    </div>
+  )
 }
 
 export default App;
