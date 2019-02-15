@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
 class Music extends React.Component {
@@ -17,8 +17,8 @@ class Music extends React.Component {
     render() {
       return (
         <div>
-            <h1>Music?</h1>
-          <button className="btn-success" onClick={this.togglePlay}>{this.state.play ? 'Pause' : 'Play'}</button>
+            <h1>Musiken yao?</h1>
+          <button className="btn-success" onClick={this.togglePlay}>{this.state.play ? 'Nej' : 'Ja'}</button>
         </div>
       );
     }
